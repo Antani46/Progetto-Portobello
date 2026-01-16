@@ -1,60 +1,228 @@
 {
   "users": [
     {
-      "id": 1,
       "email": "admin@portobello.com",
-      "password": "password123",
-      "name": "Admin User",
-      "role": "Admin"
+      "password": "$2a$10$OSIio5U1TvEwjm5qTepNK.LuKXteDKmVw6ScTMdNFlV9zSCjj.Jmm",
+      "role": "Admin",
+      "name": "Claus",
+      "id": 1
     },
     {
-      "id": 2,
       "email": "user@portobello.com",
-      "password": "password123",
-      "name": "Normal User",
-      "role": "User"
+      "password": "$2a$10$OSIio5U1TvEwjm5qTepNK.LuKXteDKmVw6ScTMdNFlV9zSCjj.Jmm",
+      "role": "User",
+      "name": "Marco",
+      "id": 2
     }
   ],
   "products": [
     {
       "id": 1,
-      "name": "Macchina da scrivere vintage",
-      "description": "Una bellissima macchina da scrivere Olivetti Lettera 32, perfettamente funzionante. Un pezzo di storia sulla tua scrivania.",
+      "name": "Bracciale vintage in ottone",
+      "description": "Un bellissimo bracciale vintage in ottone, perfetto per un look retrò.",
       "price": 120,
       "category": "Antiquariato",
-      "imageUrl": "https://i.ebayimg.com/images/g/c~QAAOSwjqtkzep7/s-l1600.jpg"
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_53779812161_f386f9ed97_400_300_nofilter.jpg"
     },
     {
       "id": 2,
-      "name": "Vaso in ceramica dipinto a mano",
-      "description": "Vaso artigianale degli anni '70, con decorazioni floreali. Nessuna crepa o sbeccatura. Ideale per un arredamento retrò.",
+      "name": "Quadro vintage",
+      "description": "Un quadro vintage con una bellissima cornice in legno.",
       "price": 45,
       "category": "Arredamento",
-      "imageUrl": "https://i.ebayimg.com/images/g/l~EAAOSwg31kx2Pq/s-l1600.png"
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_54224264084_ed7a0014d0_400_300_nofilter.jpg"
     },
     {
       "id": 3,
-      "name": "Poltrona in pelle invecchiata",
-      "description": "Comoda poltrona club in vera pelle, colore marrone. Presenta alcuni segni di usura che ne aumentano il fascino.",
+      "name": "Mobile vintage",
+      "description": "Un mobile vintage in legno, perfetto per un arredamento retrò.",
       "price": 350,
       "category": "Arredamento",
-      "imageUrl": "https://www.mobilispaper.com/wp-content/uploads/2021/10/POLTRONA-PELLE-VINTAGE-CHESTERFIELD.jpg"
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_50627653127_44225d45ac_400_300_nofilter.jpg"
     },
     {
       "id": 4,
-      "name": "Collezione di vinili anni '80",
-      "description": "Lotto di 20 vinili di musica pop e rock internazionale degli anni '80. Include artisti come Madonna, Queen e Duran Duran. Condizioni varie.",
+      "name": " Vinile rock anni 80",
+      "description": "Un vinile rock anni 80, in ottimo stato di conservazione.",
       "price": 80,
       "category": "Musica",
-      "imageUrl": "https://i.ebayimg.com/images/g/pSMAAOSw~1Vk-pNd/s-l1600.jpg"
+      "imageUrl": "https://loremflickr.com/cache/resized/2561_3946999963_1705964d89_400_300_nofilter.jpg"
     },
     {
-        "id": 5,
-        "name": "Lampada da tavolo industriale",
-        "description": "Lampada da architetto in metallo, stile industriale. Braccio snodabile e base pesante per massima stabilità. Funzionante.",
-        "price": 75,
-        "category": "Illuminazione",
-        "imageUrl": "https://www.ilide.it/wp-content/uploads/2021/04/lampada-da-tavolo-vintage-industriale-in-ceramica-nera-e-cemento-con-paralume-in-metallo-traforato-e-base-in-legno-Gadora.jpg"
-      }
+      "id": 5,
+      "name": "Fotocamera Nikon D5000",
+      "description": "Fotocamera Nikon D5000, in ottimo stato di conservazione.",
+      "price": 250,
+      "category": "Elettronica",
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_51492277187_a89de24480_400_300_nofilter.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Sedia Sdraio",
+      "description": "Sedia Sdraio, in ottimo stato di conservazione.",
+      "price": 20,
+      "category": "Arredamento",
+      "imageUrl": "https://loremflickr.com/cache/resized/4188_34252794692_3ceeba1faf_400_300_nofilter.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Poltrona grande",
+      "description": "Poltrona grande, in pelle vera.",
+      "price": 500,
+      "category": "Arredamento",
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_52508209939_0b1387023f_400_300_nofilter.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Chitarra Acustica",
+      "description": "Chitarra Acustica, in ottimo stato di conservazione.",
+      "price": 150,
+      "category": "Musica",
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_54296210776_8e7e92947a_400_300_nofilter.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Ornamento tavolo antico",
+      "description": "Ornamento tavolo antico, in ottimo stato di conservazione.",
+      "price": 150,
+      "category": "Antiquariato",
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_53722272088_4bf65afb5e_400_300_nofilter.jpg"
+    },
+    {
+      "name": "Macchina da Scrivere Olivetti",
+      "category": "Antiquariato",
+      "price": 150,
+      "description": "Iconica macchina da scrivere, ottime condizioni.",
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_54113477826_5f21ece20b_400_300_nofilter.jpg",
+      "id": 10
+    },
+    {
+      "name": "Telefono a Disco",
+      "category": "Antiquariato",
+      "price": 80,
+      "description": "Telefono vintage funzionante.",
+      "imageUrl": "https://loremflickr.com/cache/resized/2062_2044441912_cdbad12fd8_400_300_nofilter.jpg",
+      "id": 11
+    },
+    {
+      "name": "Radio a Valvole",
+      "category": "Elettronica",
+      "price": 120,
+      "description": "Suono caldo e avvolgente.",
+      "imageUrl": "https://loremflickr.com/cache/resized/3782_32488192884_c52834a032_400_300_nofilter.jpg",
+      "id": 12
+    },
+    {
+      "name": "Lampada Tiffany",
+      "category": "Illuminazione",
+      "price": 200,
+      "description": "Stile classico e colori vivaci.",
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_53870884373_49d170b131_z_400_300_nofilter.jpg",
+      "id": 13
+    },
+    {
+      "name": "Orologio da Taschino",
+      "category": "Antiquariato",
+      "price": 90,
+      "description": "Perfetto per collezionisti.",
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_53442406423_e8eba9b12d_400_300_nofilter.jpg",
+      "id": 14
+    },
+    {
+      "name": "Giradischi Portatile",
+      "category": "Musica",
+      "price": 110,
+      "description": "Per ascoltare i tuoi vinili ovunque.",
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_54562072631_96ebe17e40_400_300_nofilter.jpg",
+      "id": 15
+    },
+    {
+      "name": "Valigia in Pelle",
+      "category": "Arredamento",
+      "price": 70,
+      "description": "Ideale come decorazione.",
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_54207310819_6f15a4ff41_z_400_300_nofilter.jpg",
+      "id": 16
+    },
+    {
+      "name": "Bussola Antica",
+      "category": "Antiquariato",
+      "price": 45,
+      "description": "Ottone lucido, perfettamente conservata.",
+      "imageUrl": "https://loremflickr.com/cache/resized/1525_24190568916_72c806fe66_400_300_nofilter.jpg",
+      "id": 17
+    },
+    {
+      "name": "Macchina Fotografica Analogica",
+      "category": "Elettronica",
+      "price": 180,
+      "description": "Scatta foto con stile.",
+      "imageUrl": "https://loremflickr.com/cache/resized/3762_11226454804_ca67771592_400_300_nofilter.jpg",
+      "id": 18
+    },
+    {
+      "name": "Ventilatore Retrò",
+      "category": "Elettronica",
+      "price": 60,
+      "description": "Funzionante e decorativo.",
+      "imageUrl": "https://loremflickr.com/cache/resized/5142_5688077556_0d1eecce9a_z_400_300_nofilter.jpg",
+      "id": 19
+    },
+    {
+      "name": "Specchio Dorato",
+      "category": "Arredamento",
+      "price": 95,
+      "description": "Cornice lavorata a mano.",
+      "imageUrl": "https://loremflickr.com/cache/resized/7403_9580158025_8144b70882_z_400_300_nofilter.jpg",
+      "id": 20
+    },
+    {
+      "name": "Mappamondo Antico",
+      "category": "Antiquariato",
+      "price": 85,
+      "description": "Cartografia storica.",
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_53562843575_8d21084047_z_400_300_nofilter.jpg",
+      "id": 21
+    },
+    {
+      "name": "Televisore CRT",
+      "category": "Elettronica",
+      "price": 50,
+      "description": "Pezzo di storia della TV.",
+      "imageUrl": "https://loremflickr.com/cache/resized/5054_5443182430_5b3b286244_400_300_nofilter.jpg",
+      "id": 22
+    },
+    {
+      "name": "Violino Antico",
+      "category": "Musica",
+      "price": 300,
+      "description": "Strumento di pregio.",
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_54584329109_03d772134b_400_300_nofilter.jpg",
+      "id": 23
+    },
+    {
+      "name": "Macchina da Cucire Singer",
+      "category": "Antiquariato",
+      "price": 100,
+      "description": "La classica macchina a pedale.",
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_52728092194_1553c6c0b6_400_300_nofilter.jpg",
+      "id": 24
+    },
+    {
+      "name": "Cappello a Cilindro",
+      "category": "Antiquariato",
+      "price": 55,
+      "description": "Per un tocco di classe.",
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_54400276005_4dfd44af31_z_400_300_nofilter.jpg",
+      "id": 25
+    },
+    {
+      "name": "Vinile Pink Floyd",
+      "description": "Vinile Medley anni 70 in ottime condizioni",
+      "price": 50,
+      "category": "Musica",
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_54102447663_2c2ffc65bc_z_400_300_nofilter.jpg",
+      "id": 26
+    }
   ]
 }

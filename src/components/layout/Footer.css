@@ -1,9 +1,14 @@
+/* =========================================
+   Footer Styling
+   ========================================= */
 .footer {
   background-color: #333;
   color: #fff;
   padding: 20px 0;
   text-align: center;
   font-size: 0.9rem;
+  margin-top: auto;
+  /* Mantiene il footer in basso se il contenuto è breve */
 }
 
 .footer-container {

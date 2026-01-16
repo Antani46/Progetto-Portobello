@@ -1,19 +1,30 @@
 import axios from 'axios';
-import { store } from '../app/store'; // Importa lo store Redux
 
+/**
+ * Configurazione principale del client Axios.
+ * Imposta l'URL di base e gli header comuni per le richieste API.
+ */
 const apiClient = axios.create({
-  baseURL: 'http://localhost:5000', // Porta corretta per json-server-auth
+  baseURL: '/api',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// Interceptor per aggiungere il token di autenticazione ad ogni richiesta
+/**
+ * Interceptor per le richieste HTTP.
+ * Inietta automaticamente il token di autenticazione (se presente) negli header.
+ */
 apiClient.interceptors.request.use(
   (config) => {
-    const token = store.getState().auth.token;
-    if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`;
+    const storedUser = localStorage.getItem('user');
+
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      // Aggiunge il token Bearer se l'utente è autenticato
+      if (user && user.token) {
+        config.headers['Authorization'] = `Bearer ${user.token}`;
+      }
     }
     return config;
   },

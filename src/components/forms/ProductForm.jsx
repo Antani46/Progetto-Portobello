@@ -2,6 +2,15 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProductForm.css';
 
+/**
+ * Componente Form Prodotto.
+ * Riutilizzabile per la creazione e la modifica di prodotti.
+ * Gestisce la validazione locale e lo stato del form.
+ *
+ * @param {Object} product - (Opzionale) Dati del prodotto per la modifica.
+ * @param {Function} onSubmit - Callback chiamata alla sottomissione valida.
+ * @param {boolean} isSaving - Stato di caricamento durante il salvataggio.
+ */
 const ProductForm = ({ product, onSubmit, isSaving }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -13,8 +22,8 @@ const ProductForm = ({ product, onSubmit, isSaving }) => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
+  // Inizializza il form con i dati del prodotto se presenti (Edit Mode)
   useEffect(() => {
-    // If we are editing, populate the form with the product's data
     if (product) {
       setFormData({
         name: product.name || '',
@@ -26,17 +35,18 @@ const ProductForm = ({ product, onSubmit, isSaving }) => {
     }
   }, [product]);
 
+  // Validazione campi obbligatori e formati
   const validateForm = () => {
     const newErrors = {};
     if (!formData.name) newErrors.name = "Il nome è obbligatorio.";
     if (!formData.description) newErrors.description = "La descrizione è obbligatoria.";
     if (!formData.price) {
-        newErrors.price = "Il prezzo è obbligatorio.";
+      newErrors.price = "Il prezzo è obbligatorio.";
     } else if (isNaN(formData.price) || Number(formData.price) <= 0) {
-        newErrors.price = "Il prezzo deve essere un numero positivo.";
+      newErrors.price = "Il prezzo deve essere un numero positivo.";
     }
     if (!formData.category) newErrors.category = "La categoria è obbligatoria.";
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -49,48 +59,55 @@ const ProductForm = ({ product, onSubmit, isSaving }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-        const finalData = { ...formData, price: Number(formData.price) };
-        onSubmit(finalData);
+      // Conversione prezzo in numero
+      const finalData = { ...formData, price: Number(formData.price) };
+      onSubmit(finalData);
     }
   };
 
   return (
     <div className="product-form-container">
       <form onSubmit={handleSubmit} className="product-form" noValidate>
+        {/* Campo Nome */}
         <div className="form-group">
           <label htmlFor="name">Nome Prodotto</label>
           <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
           {errors.name && <p className="error-text">{errors.name}</p>}
         </div>
 
+        {/* Campo Descrizione */}
         <div className="form-group">
           <label htmlFor="description">Descrizione</label>
           <textarea id="description" name="description" value={formData.description} onChange={handleChange} />
           {errors.description && <p className="error-text">{errors.description}</p>}
         </div>
 
+        {/* Campo Prezzo */}
         <div className="form-group">
           <label htmlFor="price">Prezzo (€)</label>
           <input type="number" id="price" name="price" value={formData.price} onChange={handleChange} />
           {errors.price && <p className="error-text">{errors.price}</p>}
         </div>
 
+        {/* Campo Categoria */}
         <div className="form-group">
           <label htmlFor="category">Categoria</label>
           <input type="text" id="category" name="category" value={formData.category} onChange={handleChange} />
           {errors.category && <p className="error-text">{errors.category}</p>}
         </div>
 
+        {/* Campo URL Immagine (Opzionale) */}
         <div className="form-group">
           <label htmlFor="imageUrl">URL Immagine</label>
           <input type="text" id="imageUrl" name="imageUrl" value={formData.imageUrl} onChange={handleChange} />
         </div>
 
+        {/* Bottoni Azione */}
         <div className="form-actions">
-          <button type="submit" className="btn-save" disabled={isSaving}>
+          <button type="submit" className="btn-primary" disabled={isSaving}>
             {isSaving ? 'Salvataggio...' : 'Salva Prodotto'}
           </button>
-          <button type="button" className="btn-cancel" onClick={() => navigate('/admin')}>
+          <button type="button" className="btn-secondary" onClick={() => navigate('/admin')}>
             Annulla
           </button>
         </div>

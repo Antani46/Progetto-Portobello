@@ -1,0 +1,60 @@
+/* =========================================
+   Admin Dashboard Layout
+   ========================================= */
+.admin-dashboard {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-dashboard h1 {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Bottone Aggiungi Prodotto */
+.add-product-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  width: auto;
+}
+
+/* =========================================
+   Table Styling
+   ========================================= */
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.products-table th,
+.products-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.products-table thead {
+  background-color: #f8f9fa;
+}
+
+.products-table th {
+  font-weight: bold;
+}
+
+/* Azioni CRUD */
+.actions-cell {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stile per i bottoni piccoli nella tabella */
+.btn-small {
+  font-size: 0.8rem !important;
+  padding: 8px 12px !important;
+}

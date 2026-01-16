@@ -1,6 +1,9 @@
-import React from 'react';
 import './Footer.css';
 
+/**
+ * Componente Footer.
+ * Visualizza le informazioni di copyright e i crediti a fondo pagina.
+ */
 function Footer() {
   return (
     <footer className="footer">

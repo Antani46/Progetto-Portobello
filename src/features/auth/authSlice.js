@@ -1,69 +1,120 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import apiClient from '../../api/apiClient';
 
-// Thunk asincrono per il login
+// Thunk per il Login (azione asincrona)
 export const loginUser = createAsyncThunk(
-  'auth/loginUser',
-  async (credentials, { rejectWithValue }) => {
-    try {
-      const response = await apiClient.post('/login', credentials);
-      // Il backend fittizio dovrebbe restituire { user, token }
-      return response.data;
-    } catch (error) {
-      // Gestisce l'errore e lo passa come valore rifiutato
-      return rejectWithValue(error.response?.data?.message || 'Login fallito');
+    'auth/loginUser',
+    async (credentials, { rejectWithValue }) => {
+        try {
+            const response = await apiClient.post('/login', credentials);
+            // Salva nel localStorage per persistenza
+            localStorage.setItem('user', JSON.stringify({ ...response.data.user, token: response.data.accessToken }));
+            return { user: response.data.user, token: response.data.accessToken };
+        } catch (error) {
+            if (!error.response) {
+                throw error;
+            }
+            return rejectWithValue(error.response.data);
+        }
     }
-  }
 );
 
+// Thunk per la Registrazione
+export const registerUser = createAsyncThunk(
+    'auth/registerUser',
+    async (userData, { rejectWithValue }) => {
+        try {
+            // json-server-auth vuole { email, password, etc }
+            const response = await apiClient.post('/register', { ...userData, role: 'User' });
+            localStorage.setItem('user', JSON.stringify({ ...response.data.user, token: response.data.accessToken }));
+            return { user: response.data.user, token: response.data.accessToken };
+        } catch (error) {
+            if (!error.response) {
+                throw error;
+            }
+            return rejectWithValue(error.response.data);
+        }
+    }
+);
+
+// Thunk per il Logout
+export const logoutUser = createAsyncThunk(
+    'auth/logoutUser',
+    async () => {
+        localStorage.removeItem('user');
+        return null;
+    }
+);
+
+
+// Stato iniziale
+// Controlliamo se c'è già un utente salvato (per non perdere il login al refresh)
+const userFromStorage = localStorage.getItem('user')
+    ? JSON.parse(localStorage.getItem('user'))
+    : null;
+
 const initialState = {
-  user: null, // E.g. { name: 'Mario Rossi', role: 'Admin' }
-  token: null,
-  isAuthenticated: false,
-  status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
-  error: null,
+    user: userFromStorage,
+    token: userFromStorage ? userFromStorage.token : null,
+    isAuthenticated: !!userFromStorage,
+    isLoading: false,
+    error: null,
 };
 
 const authSlice = createSlice({
-  name: 'auth',
-  initialState,
-  reducers: {
-    // Azione per il logout
-    logout: (state) => {
-      state.user = null;
-      state.token = null;
-      state.isAuthenticated = false;
-      state.status = 'idle';
-      state.error = null;
+    name: 'auth',
+    initialState,
+    reducers: {
+        // Qui potremmo mettere azioni sincrone se servissero (es. resetError)
+        resetError: (state) => {
+            state.error = null;
+        }
     },
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(loginUser.pending, (state) => {
-        state.status = 'loading';
-        state.error = null;
-      })
-      .addCase(loginUser.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.user = action.payload.user;
-        state.token = action.payload.token;
-        state.isAuthenticated = true;
-      })
-      .addCase(loginUser.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.payload;
-        state.isAuthenticated = false;
-        state.user = null;
-        state.token = null;
-      });
-  },
+    extraReducers: (builder) => {
+        builder
+            // Login
+            .addCase(loginUser.pending, (state) => {
+                state.isLoading = true;
+                state.error = null;
+            })
+            .addCase(loginUser.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isAuthenticated = true;
+                state.user = action.payload.user;
+                state.token = action.payload.token;
+            })
+            .addCase(loginUser.rejected, (state, action) => {
+                state.isLoading = false;
+                state.isAuthenticated = false;
+                state.error = typeof action.payload === 'string'
+                    ? action.payload
+                    : (action.payload?.message || 'Credenziali errate');
+            })
+            // Register
+            .addCase(registerUser.pending, (state) => {
+                state.isLoading = true;
+                state.error = null;
+            })
+            .addCase(registerUser.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isAuthenticated = true;
+                state.user = action.payload.user;
+                state.token = action.payload.token;
+            })
+            .addCase(registerUser.rejected, (state, action) => {
+                state.isLoading = false;
+                state.isAuthenticated = false;
+                state.error = action.payload || 'Errore nella registrazione';
+            })
+            // Logout
+            .addCase(logoutUser.fulfilled, (state) => {
+                state.user = null;
+                state.token = null;
+                state.isAuthenticated = false;
+                state.error = null;
+            });
+    },
 });
 
-export const { logout } = authSlice.actions;
-
-export const selectIsAuthenticated = (state) => state.auth.isAuthenticated;
-export const selectUser = (state) => state.auth.user;
-export const selectAuthStatus = (state) => state.auth.status;
-export const selectAuthError = (state) => state.auth.error;
-
+export const { resetError } = authSlice.actions;
 export default authSlice.reducer;

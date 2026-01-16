@@ -3,8 +3,8 @@ import authReducer from '../features/auth/authSlice';
 import productsReducer from '../features/products/productsSlice';
 
 export const store = configureStore({
-  reducer: {
-    auth: authReducer,
-    products: productsReducer,
-  },
+    reducer: {
+        auth: authReducer,
+        products: productsReducer,
+    },
 });
