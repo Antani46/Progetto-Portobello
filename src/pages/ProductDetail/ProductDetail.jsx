@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import apiClient from '../../api/apiClient';
+import NotFound from '../NotFound/NotFound';
 import './ProductDetail.css';
 
 /**
@@ -32,12 +33,7 @@ function ProductDetail() {
 
   if (loading) return <p className="loading-text">Caricamento dettagli...</p>;
 
-  if (error || !product) return (
-    <div className="error-container">
-      <h2>Errore: {error}</h2>
-      <Link to="/catalogo" className="btn-retry">Torna al catalogo</Link>
-    </div>
-  );
+  if (error || !product) return <NotFound />;
 
   return (
     <div className="product-detail-container">

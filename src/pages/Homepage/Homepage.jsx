@@ -22,8 +22,17 @@ function Homepage() {
     const fetchFeatured = async () => {
       try {
         const response = await apiClient.get('/products');
-        // Seleziona solo i primi 4 prodotti per la vetrina
-        setProducts(response.data.slice(0, 4));
+
+        // Ordina per data creazione (dal più recente al più vecchio)
+        const sortedProducts = response.data.sort((a, b) => {
+          if (a.createdAt && b.createdAt) {
+            return new Date(b.createdAt) - new Date(a.createdAt);
+          }
+          return 0; // Fallback se mancano le date
+        });
+
+        // Seleziona i primi 4 prodotti per la vetrina
+        setProducts(sortedProducts.slice(0, 4));
       } catch (error) {
         console.error("Errore caricamento vetrina", error);
       } finally {

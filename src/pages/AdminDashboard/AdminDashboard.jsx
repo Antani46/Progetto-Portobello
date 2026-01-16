@@ -33,8 +33,14 @@ function AdminDashboard() {
 
   if (status === 'loading') return <p className="loading-text">Caricamento dashboard...</p>;
 
-  // Ordinamento per ID (opzionale, per coerenza visiva)
-  const sortedProducts = [...products].sort((a, b) => Number(a.id) - Number(b.id));
+  // Ordinamento per Data di Creazione (più recenti in alto)
+  // Fallback a ID per prodotti vecchi senza data
+  const sortedProducts = [...products].sort((a, b) => {
+    if (a.createdAt && b.createdAt) {
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    }
+    return 0; // Mantiene l'ordine originale se mancano le date
+  });
 
   return (
     <div className="admin-dashboard">
@@ -51,6 +57,7 @@ function AdminDashboard() {
             <th>Nome</th>
             <th>Prezzo</th>
             <th>Categoria</th>
+            <th>Data Creazione</th>
             <th>Azioni</th>
           </tr>
         </thead>
@@ -61,6 +68,7 @@ function AdminDashboard() {
               <td>{product.name}</td>
               <td>€{product.price}</td>
               <td>{product.category}</td>
+              <td>{product.createdAt ? new Date(product.createdAt).toLocaleDateString() : '-'}</td>
               <td className="actions-cell">
                 <Link to={`/admin/edit-product/${product.id}`} className="btn-secondary btn-small">
                   Modifica
