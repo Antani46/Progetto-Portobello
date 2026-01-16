@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@portobello.com",
+      "password": "password123",
+      "name": "Admin User",
+      "role": "Admin"
+    },
+    {
+      "id": 2,
+      "email": "user@portobello.com",
+      "password": "password123",
+      "name": "Normal User",
+      "role": "User"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Macchina da scrivere vintage",
+      "description": "Una bellissima macchina da scrivere Olivetti Lettera 32, perfettamente funzionante. Un pezzo di storia sulla tua scrivania.",
+      "price": 120,
+      "category": "Antiquariato",
+      "imageUrl": "https://i.ebayimg.com/images/g/c~QAAOSwjqtkzep7/s-l1600.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Vaso in ceramica dipinto a mano",
+      "description": "Vaso artigianale degli anni '70, con decorazioni floreali. Nessuna crepa o sbeccatura. Ideale per un arredamento retrò.",
+      "price": 45,
+      "category": "Arredamento",
+      "imageUrl": "https://i.ebayimg.com/images/g/l~EAAOSwg31kx2Pq/s-l1600.png"
+    },
+    {
+      "id": 3,
+      "name": "Poltrona in pelle invecchiata",
+      "description": "Comoda poltrona club in vera pelle, colore marrone. Presenta alcuni segni di usura che ne aumentano il fascino.",
+      "price": 350,
+      "category": "Arredamento",
+      "imageUrl": "https://www.mobilispaper.com/wp-content/uploads/2021/10/POLTRONA-PELLE-VINTAGE-CHESTERFIELD.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Collezione di vinili anni '80",
+      "description": "Lotto di 20 vinili di musica pop e rock internazionale degli anni '80. Include artisti come Madonna, Queen e Duran Duran. Condizioni varie.",
+      "price": 80,
+      "category": "Musica",
+      "imageUrl": "https://i.ebayimg.com/images/g/pSMAAOSw~1Vk-pNd/s-l1600.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Lampada da tavolo industriale",
+        "description": "Lampada da architetto in metallo, stile industriale. Braccio snodabile e base pesante per massima stabilità. Funzionante.",
+        "price": 75,
+        "category": "Illuminazione",
+        "imageUrl": "https://www.ilide.it/wp-content/uploads/2021/04/lampada-da-tavolo-vintage-industriale-in-ceramica-nera-e-cemento-con-paralume-in-metallo-traforato-e-base-in-legno-Gadora.jpg"
+      }
+  ]
+}
