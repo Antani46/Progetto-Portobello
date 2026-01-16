@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts, deleteProduct } from '../../features/products/productsSlice';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import apiClient from '../../api/apiClient';
 import './AdminDashboard.css';
 
 /**
@@ -8,40 +9,32 @@ import './AdminDashboard.css';
  * Permette agli utenti con ruolo 'Admin' di visualizzare, modificare ed eliminare prodotti.
  */
 function AdminDashboard() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+  const { items: products, status } = useSelector((state) => state.products);
 
+  // Caricamento prodotti se necessario
   useEffect(() => {
-    fetchProducts();
-  }, []);
-
-  // Recupera la lista completa dei prodotti
-  const fetchProducts = async () => {
-    try {
-      const response = await apiClient.get('/products');
-      setProducts(response.data);
-    } catch (error) {
-      console.error("Errore nel caricamento della dashboard:", error);
-    } finally {
-      setLoading(false);
+    if (status === 'idle') {
+      dispatch(fetchProducts());
     }
-  };
+  }, [status, dispatch]);
 
-
-  // Gestisce l'eliminazione di un prodotto
+  // Gestisce l'eliminazione di un prodotto tramite Redux
   const handleDelete = async (id) => {
     if (!window.confirm("Sei sicuro di voler eliminare questo prodotto?")) return;
 
     try {
-      await apiClient.delete(`/products/${id}`);
-      // Aggiorna lo stato locale rimuovendo il prodotto eliminato
-      setProducts(products.filter(p => p.id !== id));
+      await dispatch(deleteProduct(id)).unwrap();
+      // Non serve aggiornare lo stato locale, Redux lo fa automaticamente
     } catch (error) {
-      alert("Errore durante l'eliminazione del prodotto.");
+      alert("Errore durante l'eliminazione del prodotto: " + error);
     }
   };
 
-  if (loading) return <p className="loading-text">Caricamento dashboard...</p>;
+  if (status === 'loading') return <p className="loading-text">Caricamento dashboard...</p>;
+
+  // Ordinamento per ID (opzionale, per coerenza visiva)
+  const sortedProducts = [...products].sort((a, b) => Number(a.id) - Number(b.id));
 
   return (
     <div className="admin-dashboard">
@@ -62,7 +55,7 @@ function AdminDashboard() {
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => (
+          {sortedProducts.map((product) => (
             <tr key={product.id}>
               <td>{product.id}</td>
               <td>{product.name}</td>

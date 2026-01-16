@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit';
 import apiClient from '../../api/apiClient';
 
 /**
@@ -145,35 +145,46 @@ export const { setPage, setSearchTerm, setCategory } = productsSlice.actions;
  * Selettore memoizzato (simulato) per filtrare e impaginare i prodotti.
  * Combina logica di ricerca testuale, filtro categoria e paginazione.
  */
-export const selectPaginatedProducts = (state) => {
-    const { items, searchTerm, selectedCategory, currentPage, itemsPerPage } = state.products;
+/**
+ * Selettore memoizzato per filtrare e impaginare i prodotti.
+ * Utilizza createSelector per evitare ricalcoli inutili se stato non cambia.
+ */
+export const selectPaginatedProducts = createSelector(
+    [
+        (state) => state.products.items,
+        (state) => state.products.searchTerm,
+        (state) => state.products.selectedCategory,
+        (state) => state.products.currentPage,
+        (state) => state.products.itemsPerPage
+    ],
+    (items, searchTerm, selectedCategory, currentPage, itemsPerPage) => {
+        // 1. Applicazione Filtri
+        let result = items;
 
-    // 1. Applicazione Filtri
-    let result = items;
+        if (selectedCategory !== 'Tutte') {
+            result = result.filter(item => item.category === selectedCategory);
+        }
 
-    if (selectedCategory !== 'Tutte') {
-        result = result.filter(item => item.category === selectedCategory);
+        if (searchTerm) {
+            const lowerTerm = searchTerm.toLowerCase();
+            result = result.filter(item =>
+                item.name.toLowerCase().includes(lowerTerm) ||
+                item.description.toLowerCase().includes(lowerTerm)
+            );
+        }
+
+        // 2. Calcolo Paginazione
+        const totalItems = result.length;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const paginatedItems = result.slice(startIndex, startIndex + itemsPerPage);
+
+        return {
+            items: paginatedItems,
+            totalPages,
+            totalItems
+        };
     }
-
-    if (searchTerm) {
-        const lowerTerm = searchTerm.toLowerCase();
-        result = result.filter(item =>
-            item.name.toLowerCase().includes(lowerTerm) ||
-            item.description.toLowerCase().includes(lowerTerm)
-        );
-    }
-
-    // 2. Calcolo Paginazione
-    const totalItems = result.length;
-    const totalPages = Math.ceil(totalItems / itemsPerPage);
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const paginatedItems = result.slice(startIndex, startIndex + itemsPerPage);
-
-    return {
-        items: paginatedItems,
-        totalPages,
-        totalItems
-    };
-};
+);
 
 export default productsSlice.reducer;

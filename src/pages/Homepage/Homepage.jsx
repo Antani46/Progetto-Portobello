@@ -2,22 +2,12 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import apiClient from '../../api/apiClient';
 import './Homepage.css';
+import ProductCard from '../../components/common/ProductCard';
 
 /**
  * Componente per la card del prodotto in vetrina.
  */
-const ProductCard = ({ product }) => (
-  <div className="product-card">
-    <img src={product.imageUrl} alt={product.name} className="product-image" />
-    <div className="product-info">
-      <h3>{product.name}</h3>
-      <p className="product-price">€{product.price}</p>
-      <Link to={`/catalogo/${product.id}`} className="btn-details">
-        Vedi Dettagli
-      </Link>
-    </div>
-  </div>
-);
+// ProductCard rimosso in favore del componente condiviso in components/common
 
 /**
  * Pagina principale dell'applicazione.

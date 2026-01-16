@@ -3,22 +3,12 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts, setPage, setSearchTerm, setCategory, selectPaginatedProducts } from '../../features/products/productsSlice';
 import './Catalog.css';
+import ProductCard from '../../components/common/ProductCard';
 
 /**
  * Componente per la visualizzazione della card prodotto nel catalogo.
  */
-const ProductCard = ({ product }) => (
-  <div className="product-card">
-    <img src={product.imageUrl} alt={product.name} className="product-image" />
-    <div className="product-info">
-      <h3>{product.name}</h3>
-      <p className="product-price">€{product.price}</p>
-      <Link to={`/catalogo/${product.id}`} className="btn-details">
-        Vedi Dettagli
-      </Link>
-    </div>
-  </div>
-);
+// ProductCard rimosso in favore del componente condiviso in components/common
 
 /**
  * Pagina Catalogo.
