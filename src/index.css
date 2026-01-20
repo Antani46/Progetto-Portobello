@@ -1,26 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-  /* Color Palette - Vintage Premium */
+
   --primary-blue: #1a252f;
-  /* Deep Midnight Blue */
   --secondary-blue: #2c3e50;
-  /* Slate Blue */
   --accent-orange: #e67e22;
-  /* Vintage Orange */
   --accent-gold: #f1c40f;
-  /* Subtle Gold for highlights */
   --light-bg: #f8f9fa;
-  /* Soft Gray */
   --white: #ffffff;
   --text-dark: #2c3e50;
   --text-light: #ecf0f1;
-
-  /* Typography */
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Lato', sans-serif;
-
-  /* Spacing & Borders */
   --border-radius: 8px;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --box-shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.15);
@@ -57,7 +48,6 @@ a {
   transition: color 0.3s ease;
 }
 
-/* Global Button Styles */
 button,
 .btn {
   font-family: var(--font-body);
@@ -97,10 +87,8 @@ button,
 
 .btn-secondary {
   width: auto;
-  /* Usually smaller */
   padding: 12px 20px;
   background-color: #95a5a6;
-  /* Neutral Gray */
   color: white;
   border-radius: var(--border-radius);
   font-weight: 700;
@@ -115,7 +103,6 @@ button,
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Helper Class for consistent "Vedi Dettagli" buttons */
 .btn-details {
   background-color: var(--primary-blue);
   color: var(--white);
@@ -152,14 +139,12 @@ button,
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Container Utility */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Shared Premium Product Card Styles */
 .product-card {
   border: none;
   border-radius: 12px;

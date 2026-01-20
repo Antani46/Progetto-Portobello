@@ -7,7 +7,7 @@ export const loginUser = createAsyncThunk(
     async (credentials, { rejectWithValue }) => {
         try {
             const response = await apiClient.post('/login', credentials);
-            // Salva nel localStorage per persistenza
+            // Salva nel localStorage
             localStorage.setItem('user', JSON.stringify({ ...response.data.user, token: response.data.accessToken }));
             return { user: response.data.user, token: response.data.accessToken };
         } catch (error) {
@@ -24,7 +24,6 @@ export const registerUser = createAsyncThunk(
     'auth/registerUser',
     async (userData, { rejectWithValue }) => {
         try {
-            // json-server-auth vuole { email, password, etc }
             const response = await apiClient.post('/register', { ...userData, role: 'User' });
             localStorage.setItem('user', JSON.stringify({ ...response.data.user, token: response.data.accessToken }));
             return { user: response.data.user, token: response.data.accessToken };
@@ -47,7 +46,6 @@ export const logoutUser = createAsyncThunk(
 );
 
 
-// Stato iniziale
 // Controlliamo se c'è già un utente salvato (per non perdere il login al refresh)
 const userFromStorage = localStorage.getItem('user')
     ? JSON.parse(localStorage.getItem('user'))
@@ -65,7 +63,6 @@ const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        // Qui potremmo mettere azioni sincrone se servissero (es. resetError)
         resetError: (state) => {
             state.error = null;
         }

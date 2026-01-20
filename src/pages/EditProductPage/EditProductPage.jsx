@@ -3,10 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import apiClient from '../../api/apiClient';
 import ProductForm from '../../components/forms/ProductForm';
 
-/**
- * Pagina di Modifica Prodotto.
- * Recupera i dati del prodotto esistente e visualizza un form precompilato per la modifica.
- */
+//Pagina di Modifica Prodotto.
 function EditProductPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -15,7 +12,7 @@ function EditProductPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
 
-  // Recupera i dati del prodotto all'avvio
+  //Recupera i dati del prodotto all'avvio
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -32,7 +29,7 @@ function EditProductPage() {
     fetchProduct();
   }, [id, navigate]);
 
-  // Gestisce il salvataggio delle modifiche
+  //Gestisce il salvataggio delle modifiche
   const handleUpdate = async (updatedData) => {
     setIsSaving(true);
     try {
@@ -51,7 +48,7 @@ function EditProductPage() {
     <div style={{ padding: '20px' }}>
       <h1>Modifica Prodotto</h1>
 
-      {/* Form riutilizzabile per la modifica */}
+      {/*Form riutilizzabile per la modifica */}
       <ProductForm
         product={productToEdit}
         onSubmit={handleUpdate}

@@ -2,10 +2,8 @@ import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit'
 import apiClient from '../../api/apiClient';
 import { generateUniqueId } from '../../utility/idGen';
 
-/**
- * Thunk asincrono per il recupero della lista prodotti.
- * Gestisce il caricamento e gli errori di rete.
- */
+//Thunk asincrono per il recupero della lista prodotti.
+
 export const fetchProducts = createAsyncThunk(
     'products/fetchProducts',
     async (_, { rejectWithValue }) => {
@@ -18,9 +16,7 @@ export const fetchProducts = createAsyncThunk(
     }
 );
 
-/**
- * Thunk asincrono per l'eliminazione di un prodotto.
- */
+//Thunk asincrono per l'eliminazione di un prodotto.
 export const deleteProduct = createAsyncThunk(
     'products/deleteProduct',
     async (idToDelete, { rejectWithValue }) => {
@@ -33,9 +29,7 @@ export const deleteProduct = createAsyncThunk(
     }
 );
 
-/**
- * Thunk asincrono per l'aggiunta di un nuovo prodotto.
- */
+//Thunk asincrono per l'aggiunta di un nuovo prodotto.
 export const addProduct = createAsyncThunk(
     'products/addProduct',
     async (newProductData, { rejectWithValue }) => {
@@ -59,7 +53,6 @@ const initialState = {
     filteredItems: [],
     status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
     error: null,
-    // Stato per la paginazione e filtri
     currentPage: 1,
     itemsPerPage: 12,
     searchTerm: '',
@@ -101,7 +94,6 @@ const productsSlice = createSlice({
                 if (action.payload.products) {
                     state.items = action.payload.products;
                 } else {
-                    // Fallback per aggiornamento locale ottimistico
                     state.items = state.items.filter(item => item.id !== action.payload.id);
                 }
             })
@@ -114,9 +106,7 @@ const productsSlice = createSlice({
 
 export const { setPage, setSearchTerm, setCategory } = productsSlice.actions;
 
-/**
- * Selettore memoizzato per filtrare e impaginare i prodotti.
- */
+//Selettore memorizzato per filtrare e impaginare i prodotti.
 export const selectPaginatedProducts = createSelector(
     [
         (state) => state.products.items,
@@ -126,7 +116,7 @@ export const selectPaginatedProducts = createSelector(
         (state) => state.products.itemsPerPage
     ],
     (items, searchTerm, selectedCategory, currentPage, itemsPerPage) => {
-        // 1. Applicazione Filtri
+        //Applicazione Filtri
         let result = items;
 
         if (selectedCategory !== 'Tutte') {
@@ -141,7 +131,7 @@ export const selectPaginatedProducts = createSelector(
             );
         }
 
-        // 2. Calcolo Paginazione
+        //Calcolo Paginazione
         const totalItems = result.length;
         const totalPages = Math.ceil(totalItems / itemsPerPage);
         const startIndex = (currentPage - 1) * itemsPerPage;

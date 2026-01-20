@@ -4,10 +4,8 @@ import apiClient from '../../api/apiClient';
 import NotFound from '../NotFound/NotFound';
 import './ProductDetail.css';
 
-/**
- * Pagina di Dettaglio Prodotto.
- * Recupera e visualizza le informazioni complete di un singolo prodotto.
- */
+//Pagina di Dettaglio Prodotto.
+
 function ProductDetail() {
   const { id } = useParams();
 
@@ -15,7 +13,7 @@ function ProductDetail() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Effetto per il recupero dati del prodotto tramite ID
+  //Recupero dati del prodotto tramite ID
   useEffect(() => {
     const fetchProduct = async () => {
       try {

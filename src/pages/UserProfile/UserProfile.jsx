@@ -3,17 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logoutUser } from '../../features/auth/authSlice';
 import './UserProfile.css';
 
-/**
- * Pagina Profilo Utente.
- * Visualizza le informazioni dell'utente loggato e permette il logout.
- */
+//Pagina Profilo Utente
 function UserProfile() {
-  // Accesso allo stato di autenticazione Redux
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // Gestione Logout
+  //Gestione Logout
   const handleLogout = () => {
     dispatch(logoutUser());
     navigate('/');

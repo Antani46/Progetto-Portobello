@@ -3,19 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import apiClient from '../../api/apiClient';
 import ProductForm from '../../components/forms/ProductForm';
 
-/**
- * Pagina per l'aggiunta di un nuovo prodotto.
- * Utilizza il componente riutilizzabile ProductForm.
- */
+//Pagina per l'aggiunta di un nuovo prodotto.
 function AddProductPage() {
   const navigate = useNavigate();
   const [isSaving, setIsSaving] = useState(false);
 
-  // Gestione dell'invio del form
+  //Gestione dell'invio del form
   const handleSubmit = async (productData) => {
     setIsSaving(true);
     try {
-      // Chiamata API POST per creare il prodotto
+      //Chiamata API POST per creare il prodotto
       await apiClient.post('/products', productData);
       navigate('/admin');
     } catch (error) {
@@ -26,6 +23,7 @@ function AddProductPage() {
     }
   };
 
+  //Renderizzazione
   return (
     <div style={{ padding: '20px' }}>
       <h1>Aggiungi Nuovo Prodotto</h1>

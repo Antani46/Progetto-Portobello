@@ -1,28 +1,18 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts, setPage, setSearchTerm, setCategory, selectPaginatedProducts } from '../../features/products/productsSlice';
 import './Catalog.css';
 import ProductCard from '../../components/common/ProductCard';
 
-/**
- * Componente per la visualizzazione della card prodotto nel catalogo.
- */
-// ProductCard rimosso in favore del componente condiviso in components/common
+//Componente per la visualizzazione della card prodotto nel catalogo
 
-/**
- * Pagina Catalogo.
- * Visualizza la lista dei prodotti con funzionalità di ricerca, filtro per categoria e paginazione.
- * Utilizza Redux per la gestione dello stato.
- */
+//Pagina Catalogo
+
 function Catalog() {
   const dispatch = useDispatch();
-
-  // Selezione stato da Redux (base e derivato)
   const { status, error, currentPage, searchTerm, selectedCategory } = useSelector((state) => state.products);
   const { items: paginatedItems, totalPages } = useSelector(selectPaginatedProducts);
 
-  // Effetto per caricare i prodotti all'avvio se non presenti
   useEffect(() => {
     if (status === 'idle') {
       dispatch(fetchProducts());
@@ -43,7 +33,7 @@ function Catalog() {
     }
   };
 
-  // Gestione stati di caricamento ed errore
+  //Gestione stati di caricamento ed errore
   if (status === 'loading') return <p className="loading-text">Caricamento prodotti in corso...</p>;
 
   if (status === 'failed') {
@@ -58,7 +48,7 @@ function Catalog() {
     );
   }
 
-  // Lista categorie (Simulata)
+  //Lista categorie
   const categories = ["Tutte", "Antiquariato", "Arredamento", "Musica", "Illuminazione", "Elettronica"];
 
   return (

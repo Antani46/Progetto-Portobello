@@ -4,28 +4,24 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './AdminDashboard.css';
 
-/**
- * Dashboard di Amministrazione.
- * Permette agli utenti con ruolo 'Admin' di visualizzare, modificare ed eliminare prodotti.
- */
+//Dashboard di Amministrazione.
 function AdminDashboard() {
   const dispatch = useDispatch();
   const { items: products, status } = useSelector((state) => state.products);
 
-  // Caricamento prodotti se necessario
+  //Caricamento prodotti se necessario
   useEffect(() => {
     if (status === 'idle') {
       dispatch(fetchProducts());
     }
   }, [status, dispatch]);
 
-  // Gestisce l'eliminazione di un prodotto tramite Redux
+  //Gestisce l'eliminazione di un prodotto tramite Redux
   const handleDelete = async (id) => {
     if (!window.confirm("Sei sicuro di voler eliminare questo prodotto?")) return;
 
     try {
       await dispatch(deleteProduct(id)).unwrap();
-      // Non serve aggiornare lo stato locale, Redux lo fa automaticamente
     } catch (error) {
       alert("Errore durante l'eliminazione del prodotto: " + error);
     }
@@ -33,13 +29,12 @@ function AdminDashboard() {
 
   if (status === 'loading') return <p className="loading-text">Caricamento dashboard...</p>;
 
-  // Ordinamento per Data di Creazione (più recenti in alto)
-  // Fallback a ID per prodotti vecchi senza data
+  //Ordinamento per Data di Creazione
   const sortedProducts = [...products].sort((a, b) => {
     if (a.createdAt && b.createdAt) {
       return new Date(b.createdAt) - new Date(a.createdAt);
     }
-    return 0; // Mantiene l'ordine originale se mancano le date
+    return 0;
   });
 
   return (

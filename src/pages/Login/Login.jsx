@@ -4,27 +4,22 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../features/auth/authSlice';
 import './Login.css';
 
-/**
- * Pagina di Login.
- * Gestisce l'autenticazione dell'utente tramite form.
- * Reindirizza l'utente alla pagina precedente o al profilo dopo il successo.
- */
+//Pagina di Login
+
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [localError, setLocalError] = useState(''); // Stato per errori di validazione locale
+  const [localError, setLocalError] = useState(''); //Stato per errori di validazione locale
 
   const dispatch = useDispatch();
-  // Estrazione stato autenticazione da Redux
+
   const { isAuthenticated, error: reduxError, isLoading } = useSelector((state) => state.auth);
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Determinazione del percorso di redirect post-login (default: /profilo)
   const from = location.state?.from?.pathname || '/profilo';
 
-  // Effetto: Monitora lo stato di autenticazione per il redirect automatico
   useEffect(() => {
     if (isAuthenticated) {
       navigate(from, { replace: true });
@@ -35,7 +30,7 @@ function Login() {
     e.preventDefault();
     setLocalError('');
 
-    // Avvio processo di login tramite Thunk Redux
+    //Avvio processo di login tramite Thunk Redux
     dispatch(loginUser({ email, password }));
   };
 
@@ -66,7 +61,7 @@ function Login() {
           />
         </div>
 
-        {/* Visualizzazione Errori (Locali o da Redux) */}
+        {/*Visualizzazione Errori */}
         {(localError || reduxError) && <p className="error-message">{localError || reduxError}</p>}
 
         <button type="submit" disabled={isLoading} className="btn-primary">

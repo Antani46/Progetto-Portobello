@@ -1,11 +1,7 @@
 import { useState } from 'react';
 import './ContactPage.css';
 
-/**
- * Pagina Contatti.
- * Fornisce un modulo per l'invio di messaggi o richieste di supporto.
- * Gestisce la validazione dei campi e la simulazione dell'invio.
- */
+//Pagina Contatti
 function ContactPage() {
     const [formData, setFormData] = useState({
         name: '',
@@ -46,7 +42,6 @@ function ContactPage() {
         setSubmitStatus(null);
 
         if (validate()) {
-            // Simulazione invio dati (chiamata API futura)
             console.log('Messaggio inviato:', formData);
             setSubmitStatus('success');
             setFormData({ name: '', email: '', subject: '', message: '' }); // Reset del form
