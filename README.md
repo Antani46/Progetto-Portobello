@@ -81,4 +81,4 @@ Use these to test the app features:
 - Password: `password123`
 
 ---
-*Educational Project - Not for commercial use.*
+*Educational Project*
