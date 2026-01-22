@@ -11,8 +11,6 @@
   margin: 0 auto;
   padding: 30px 24px;
   background-color: #f4f7f6;
-  /* Nota: questo background ora sarà limitato al container. */
   border-left: 1px solid #eee;
-  /* Opzionale: per dare l'idea del box */
   border-right: 1px solid #eee;
 }

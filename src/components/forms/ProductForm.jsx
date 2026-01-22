@@ -2,15 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProductForm.css';
 
-/**
- * Componente Form Prodotto.
- * Riutilizzabile per la creazione e la modifica di prodotti.
- * Gestisce la validazione locale e lo stato del form.
- *
- * @param {Object} product - (Opzionale) Dati del prodotto per la modifica.
- * @param {Function} onSubmit - Callback chiamata alla sottomissione valida.
- * @param {boolean} isSaving - Stato di caricamento durante il salvataggio.
- */
+//Componente per la creazione e modifica di un prodotto
 const ProductForm = ({ product, onSubmit, isSaving }) => {
   const [formData, setFormData] = useState({
     name: '',

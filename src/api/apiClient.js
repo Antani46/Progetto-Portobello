@@ -1,9 +1,6 @@
 import axios from 'axios';
 
-/**
- * Configurazione principale del client Axios.
- * Imposta l'URL di base e gli header comuni per le richieste API.
- */
+// Configurazione del client Axios
 const apiClient = axios.create({
   baseURL: '/api',
   headers: {
@@ -11,17 +8,14 @@ const apiClient = axios.create({
   },
 });
 
-/**
- * Interceptor per le richieste HTTP.
- * Inietta automaticamente il token di autenticazione (se presente) negli header.
- */
+//Interceptor per le richieste HTTP
 apiClient.interceptors.request.use(
   (config) => {
     const storedUser = localStorage.getItem('user');
 
     if (storedUser) {
       const user = JSON.parse(storedUser);
-      // Aggiunge il token Bearer se l'utente è autenticato
+      // Aggiunge il token se l'utente è autenticato
       if (user && user.token) {
         config.headers['Authorization'] = `Bearer ${user.token}`;
       }

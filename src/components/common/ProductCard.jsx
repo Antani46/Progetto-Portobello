@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 //Componente condiviso per la visualizzazione della card prodotto.
-
 const ProductCard = ({ product }) => (
     <div className="product-card">
         <img src={product.imageUrl} alt={product.name} className="product-image" />

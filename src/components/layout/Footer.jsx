@@ -1,9 +1,6 @@
 import './Footer.css';
 
-/**
- * Componente Footer.
- * Visualizza le informazioni di copyright e i crediti a fondo pagina.
- */
+//Componente Footer
 function Footer() {
   return (
     <footer className="footer">

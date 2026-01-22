@@ -17,76 +17,85 @@
   ],
   "products": [
     {
-      "id": 1,
+      "id": "e4k9s1j2z",
       "name": "Bracciale vintage in ottone",
       "description": "Un bellissimo bracciale vintage in ottone, perfetto per un look retrò.",
       "price": 120,
       "category": "Antiquariato",
-      "imageUrl": "https://loremflickr.com/cache/resized/65535_53779812161_f386f9ed97_400_300_nofilter.jpg"
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_53779812161_f386f9ed97_400_300_nofilter.jpg",
+      "createdAt": "2024-01-01T10:00:00.000Z"
     },
     {
-      "id": 2,
+      "id": "l9m2x5q8w",
       "name": "Quadro vintage",
       "description": "Un quadro vintage con una bellissima cornice in legno.",
       "price": 45,
       "category": "Arredamento",
-      "imageUrl": "https://loremflickr.com/cache/resized/65535_54224264084_ed7a0014d0_400_300_nofilter.jpg"
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_54224264084_ed7a0014d0_400_300_nofilter.jpg",
+      "createdAt": "2024-01-02T11:00:00.000Z"
     },
     {
-      "id": 3,
+      "id": "a1b2c3d4e",
       "name": "Mobile vintage",
       "description": "Un mobile vintage in legno, perfetto per un arredamento retrò.",
       "price": 350,
       "category": "Arredamento",
-      "imageUrl": "https://loremflickr.com/cache/resized/65535_50627653127_44225d45ac_400_300_nofilter.jpg"
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_50627653127_44225d45ac_400_300_nofilter.jpg",
+      "createdAt": "2024-01-03T12:00:00.000Z"
     },
     {
-      "id": 4,
+      "id": "f5g6h7i8j",
       "name": " Vinile rock anni 80",
       "description": "Un vinile rock anni 80, in ottimo stato di conservazione.",
       "price": 80,
       "category": "Musica",
-      "imageUrl": "https://loremflickr.com/cache/resized/2561_3946999963_1705964d89_400_300_nofilter.jpg"
+      "imageUrl": "https://loremflickr.com/cache/resized/2561_3946999963_1705964d89_400_300_nofilter.jpg",
+      "createdAt": "2024-01-04T13:00:00.000Z"
     },
     {
-      "id": 5,
+      "id": "k9l0m1n2o",
       "name": "Fotocamera Nikon D5000",
       "description": "Fotocamera Nikon D5000, in ottimo stato di conservazione.",
       "price": 250,
       "category": "Elettronica",
-      "imageUrl": "https://loremflickr.com/cache/resized/65535_51492277187_a89de24480_400_300_nofilter.jpg"
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_51492277187_a89de24480_400_300_nofilter.jpg",
+      "createdAt": "2024-01-05T14:00:00.000Z"
     },
     {
-      "id": 6,
+      "id": "p3q4r5s6t",
       "name": "Sedia Sdraio",
       "description": "Sedia Sdraio, in ottimo stato di conservazione.",
       "price": 20,
       "category": "Arredamento",
-      "imageUrl": "https://loremflickr.com/cache/resized/4188_34252794692_3ceeba1faf_400_300_nofilter.jpg"
+      "imageUrl": "https://loremflickr.com/cache/resized/4188_34252794692_3ceeba1faf_400_300_nofilter.jpg",
+      "createdAt": "2024-01-06T15:00:00.000Z"
     },
     {
-      "id": 7,
+      "id": "u7v8w9x0y",
       "name": "Poltrona grande",
       "description": "Poltrona grande, in pelle vera.",
       "price": 500,
       "category": "Arredamento",
-      "imageUrl": "https://loremflickr.com/cache/resized/65535_52508209939_0b1387023f_400_300_nofilter.jpg"
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_52508209939_0b1387023f_400_300_nofilter.jpg",
+      "createdAt": "2024-01-07T16:00:00.000Z"
     },
     {
-      "id": 8,
+      "id": "z1a2b3c4d",
       "name": "Chitarra Acustica",
       "description": "Chitarra Acustica, in ottimo stato di conservazione.",
       "price": 150,
       "category": "Musica",
-      "imageUrl": "https://loremflickr.com/cache/resized/65535_54296210776_8e7e92947a_400_300_nofilter.jpg"
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_54296210776_8e7e92947a_400_300_nofilter.jpg",
+      "createdAt": "2024-01-08T17:00:00.000Z"
     },
     {
-      "id": 9,
+      "id": "e5f6g7h8i",
       "name": "Ornamento tavolo antico",
       "description": "Ornamento tavolo antico, in ottimo stato di conservazione.",
       "price": 150,
       "category": "Antiquariato",
-      "imageUrl": "https://loremflickr.com/cache/resized/65535_53722272088_4bf65afb5e_400_300_nofilter.jpg"
+      "imageUrl": "https://loremflickr.com/cache/resized/65535_53722272088_4bf65afb5e_400_300_nofilter.jpg",
+      "createdAt": "2024-01-09T18:00:00.000Z"
     },
     {
       "name": "Macchina da Scrivere Olivetti",
@@ -94,7 +103,8 @@
       "price": 150,
       "description": "Iconica macchina da scrivere, ottime condizioni.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_54113477826_5f21ece20b_400_300_nofilter.jpg",
-      "id": 10
+      "id": "j9k0l1m2n",
+      "createdAt": "2024-01-10T19:00:00.000Z"
     },
     {
       "name": "Telefono a Disco",
@@ -102,7 +112,8 @@
       "price": 80,
       "description": "Telefono vintage funzionante.",
       "imageUrl": "https://loremflickr.com/cache/resized/2062_2044441912_cdbad12fd8_400_300_nofilter.jpg",
-      "id": 11
+      "id": "o3p4q5r6s",
+      "createdAt": "2024-01-11T20:00:00.000Z"
     },
     {
       "name": "Radio a Valvole",
@@ -110,7 +121,8 @@
       "price": 120,
       "description": "Suono caldo e avvolgente.",
       "imageUrl": "https://loremflickr.com/cache/resized/3782_32488192884_c52834a032_400_300_nofilter.jpg",
-      "id": 12
+      "id": "t7u8v9w0x",
+      "createdAt": "2024-01-12T21:00:00.000Z"
     },
     {
       "name": "Lampada Tiffany",
@@ -118,7 +130,8 @@
       "price": 200,
       "description": "Stile classico e colori vivaci.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_53870884373_49d170b131_z_400_300_nofilter.jpg",
-      "id": 13
+      "id": "y1z2a3b4c",
+      "createdAt": "2024-01-13T22:00:00.000Z"
     },
     {
       "name": "Orologio da Taschino",
@@ -126,7 +139,8 @@
       "price": 90,
       "description": "Perfetto per collezionisti.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_53442406423_e8eba9b12d_400_300_nofilter.jpg",
-      "id": 14
+      "id": "d5e6f7g8h",
+      "createdAt": "2024-01-14T23:00:00.000Z"
     },
     {
       "name": "Giradischi Portatile",
@@ -134,7 +148,8 @@
       "price": 110,
       "description": "Per ascoltare i tuoi vinili ovunque.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_54562072631_96ebe17e40_400_300_nofilter.jpg",
-      "id": 15
+      "id": "i9j0k1l2m",
+      "createdAt": "2024-01-15T09:00:00.000Z"
     },
     {
       "name": "Valigia in Pelle",
@@ -142,7 +157,8 @@
       "price": 70,
       "description": "Ideale come decorazione.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_54207310819_6f15a4ff41_z_400_300_nofilter.jpg",
-      "id": 16
+      "id": "n3o4p5q6r",
+      "createdAt": "2024-01-16T10:00:00.000Z"
     },
     {
       "name": "Bussola Antica",
@@ -150,7 +166,8 @@
       "price": 45,
       "description": "Ottone lucido, perfettamente conservata.",
       "imageUrl": "https://loremflickr.com/cache/resized/1525_24190568916_72c806fe66_400_300_nofilter.jpg",
-      "id": 17
+      "id": "s7t8u9v0w",
+      "createdAt": "2024-01-17T11:00:00.000Z"
     },
     {
       "name": "Macchina Fotografica Analogica",
@@ -158,7 +175,8 @@
       "price": 180,
       "description": "Scatta foto con stile.",
       "imageUrl": "https://loremflickr.com/cache/resized/3762_11226454804_ca67771592_400_300_nofilter.jpg",
-      "id": 18
+      "id": "x1y2z3a4b",
+      "createdAt": "2024-01-18T12:00:00.000Z"
     },
     {
       "name": "Ventilatore Retrò",
@@ -166,7 +184,8 @@
       "price": 60,
       "description": "Funzionante e decorativo.",
       "imageUrl": "https://loremflickr.com/cache/resized/5142_5688077556_0d1eecce9a_z_400_300_nofilter.jpg",
-      "id": 19
+      "id": "c5d6e7f8g",
+      "createdAt": "2024-01-19T13:00:00.000Z"
     },
     {
       "name": "Specchio Dorato",
@@ -174,7 +193,8 @@
       "price": 95,
       "description": "Cornice lavorata a mano.",
       "imageUrl": "https://loremflickr.com/cache/resized/7403_9580158025_8144b70882_z_400_300_nofilter.jpg",
-      "id": 20
+      "id": "h9i0j1k2l",
+      "createdAt": "2024-01-20T14:00:00.000Z"
     },
     {
       "name": "Mappamondo Antico",
@@ -182,7 +202,8 @@
       "price": 85,
       "description": "Cartografia storica.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_53562843575_8d21084047_z_400_300_nofilter.jpg",
-      "id": 21
+      "id": "m3n4o5p6q",
+      "createdAt": "2024-01-21T15:00:00.000Z"
     },
     {
       "name": "Televisore CRT",
@@ -190,7 +211,8 @@
       "price": 50,
       "description": "Pezzo di storia della TV.",
       "imageUrl": "https://loremflickr.com/cache/resized/5054_5443182430_5b3b286244_400_300_nofilter.jpg",
-      "id": 22
+      "id": "r7s8t9u0v",
+      "createdAt": "2024-01-22T16:00:00.000Z"
     },
     {
       "name": "Violino Antico",
@@ -198,7 +220,8 @@
       "price": 300,
       "description": "Strumento di pregio.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_54584329109_03d772134b_400_300_nofilter.jpg",
-      "id": 23
+      "id": "w1x2y3z4a",
+      "createdAt": "2024-01-23T17:00:00.000Z"
     },
     {
       "name": "Macchina da Cucire Singer",
@@ -206,15 +229,8 @@
       "price": 100,
       "description": "La classica macchina a pedale.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_52728092194_1553c6c0b6_400_300_nofilter.jpg",
-      "id": 24
-    },
-    {
-      "name": "Cappello a Cilindro",
-      "category": "Antiquariato",
-      "price": 55,
-      "description": "Per un tocco di classe.",
-      "imageUrl": "https://loremflickr.com/cache/resized/65535_54400276005_4dfd44af31_z_400_300_nofilter.jpg",
-      "id": 25
+      "id": "b5c6d7e8f",
+      "createdAt": "2024-01-24T18:00:00.000Z"
     },
     {
       "name": "Vinile Pink Floyd",
@@ -222,7 +238,17 @@
       "price": 50,
       "category": "Musica",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_54102447663_2c2ffc65bc_z_400_300_nofilter.jpg",
-      "id": 26
+      "id": "g9h0i1j2k",
+      "createdAt": "2026-01-25T19:00:00.000Z"
+    },
+    {
+      "name": "Armadio Vintage",
+      "description": "Armadio 200 x 120 in ottime condizioni, con doppa anta",
+      "price": 200,
+      "category": "Arredamento",
+      "imageUrl": "",
+      "id": "2cq0lbpiu",
+      "createdAt": "2026-01-20T17:10:29.154Z"
     }
   ]
 }

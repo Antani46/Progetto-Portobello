@@ -4,7 +4,7 @@ import apiClient from '../../api/apiClient';
 import './Homepage.css';
 import ProductCard from '../../components/common/ProductCard';
 
-//Pagina principale dell'applicazione.
+//Pagina principale dell'applicazione
 function Homepage() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);

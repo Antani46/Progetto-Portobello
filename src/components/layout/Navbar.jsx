@@ -3,19 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../features/auth/authSlice';
 import './Navbar.css';
 
-/**
- * Componente Navbar.
- * Gestisce la navigazione principale e la visualizzazione condizionale basata sull'autenticazione.
- */
+// Componente Navbar
+
 function Navbar() {
   const { user, isAuthenticated } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  /**
-   * Gestisce il logout dell'utente.
-   * Dispatcha l'azione di logout e reindirizza alla homepage.
-   */
+  //Gestisce il logout dell'utente
+
   const handleLogout = () => {
     dispatch(logoutUser());
     navigate('/');

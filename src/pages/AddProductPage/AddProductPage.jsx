@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import apiClient from '../../api/apiClient';
 import ProductForm from '../../components/forms/ProductForm';
 
+import { generateProductMeta } from '../../utility/idGen';
+
 //Pagina per l'aggiunta di un nuovo prodotto.
 function AddProductPage() {
   const navigate = useNavigate();
@@ -12,8 +14,14 @@ function AddProductPage() {
   const handleSubmit = async (productData) => {
     setIsSaving(true);
     try {
+      //Aggiunge ID univoco e data di creazione da idGen
+      const newProduct = {
+        ...productData,
+        ...generateProductMeta()
+      };
+
       //Chiamata API POST per creare il prodotto
-      await apiClient.post('/products', productData);
+      await apiClient.post('/products', newProduct);
       navigate('/admin');
     } catch (error) {
       console.error("Errore salvataggio:", error);
