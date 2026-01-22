@@ -23,7 +23,7 @@
       "price": 120,
       "category": "Antiquariato",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_53779812161_f386f9ed97_400_300_nofilter.jpg",
-      "createdAt": "2024-01-01T10:00:00.000Z"
+      "createdAt": "2025-06-07"
     },
     {
       "id": "l9m2x5q8w",
@@ -32,7 +32,7 @@
       "price": 45,
       "category": "Arredamento",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_54224264084_ed7a0014d0_400_300_nofilter.jpg",
-      "createdAt": "2024-01-02T11:00:00.000Z"
+      "createdAt": "2026-01-12"
     },
     {
       "id": "a1b2c3d4e",
@@ -41,7 +41,7 @@
       "price": 350,
       "category": "Arredamento",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_50627653127_44225d45ac_400_300_nofilter.jpg",
-      "createdAt": "2024-01-03T12:00:00.000Z"
+      "createdAt": "2025-11-25"
     },
     {
       "id": "f5g6h7i8j",
@@ -50,7 +50,7 @@
       "price": 80,
       "category": "Musica",
       "imageUrl": "https://loremflickr.com/cache/resized/2561_3946999963_1705964d89_400_300_nofilter.jpg",
-      "createdAt": "2024-01-04T13:00:00.000Z"
+      "createdAt": "2025-04-10"
     },
     {
       "id": "k9l0m1n2o",
@@ -59,7 +59,7 @@
       "price": 250,
       "category": "Elettronica",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_51492277187_a89de24480_400_300_nofilter.jpg",
-      "createdAt": "2024-01-05T14:00:00.000Z"
+      "createdAt": "2025-03-19"
     },
     {
       "id": "p3q4r5s6t",
@@ -68,7 +68,7 @@
       "price": 20,
       "category": "Arredamento",
       "imageUrl": "https://loremflickr.com/cache/resized/4188_34252794692_3ceeba1faf_400_300_nofilter.jpg",
-      "createdAt": "2024-01-06T15:00:00.000Z"
+      "createdAt": "2025-08-06"
     },
     {
       "id": "u7v8w9x0y",
@@ -77,7 +77,7 @@
       "price": 500,
       "category": "Arredamento",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_52508209939_0b1387023f_400_300_nofilter.jpg",
-      "createdAt": "2024-01-07T16:00:00.000Z"
+      "createdAt": "2025-10-24"
     },
     {
       "id": "z1a2b3c4d",
@@ -86,7 +86,7 @@
       "price": 150,
       "category": "Musica",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_54296210776_8e7e92947a_400_300_nofilter.jpg",
-      "createdAt": "2024-01-08T17:00:00.000Z"
+      "createdAt": "2025-12-30"
     },
     {
       "id": "e5f6g7h8i",
@@ -95,7 +95,7 @@
       "price": 150,
       "category": "Antiquariato",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_53722272088_4bf65afb5e_400_300_nofilter.jpg",
-      "createdAt": "2024-01-09T18:00:00.000Z"
+      "createdAt": "2025-04-04"
     },
     {
       "name": "Macchina da Scrivere Olivetti",
@@ -104,7 +104,7 @@
       "description": "Iconica macchina da scrivere, ottime condizioni.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_54113477826_5f21ece20b_400_300_nofilter.jpg",
       "id": "j9k0l1m2n",
-      "createdAt": "2024-01-10T19:00:00.000Z"
+      "createdAt": "2025-08-14"
     },
     {
       "name": "Telefono a Disco",
@@ -113,7 +113,7 @@
       "description": "Telefono vintage funzionante.",
       "imageUrl": "https://loremflickr.com/cache/resized/2062_2044441912_cdbad12fd8_400_300_nofilter.jpg",
       "id": "o3p4q5r6s",
-      "createdAt": "2024-01-11T20:00:00.000Z"
+      "createdAt": "2025-10-14"
     },
     {
       "name": "Radio a Valvole",
@@ -122,7 +122,7 @@
       "description": "Suono caldo e avvolgente.",
       "imageUrl": "https://loremflickr.com/cache/resized/3782_32488192884_c52834a032_400_300_nofilter.jpg",
       "id": "t7u8v9w0x",
-      "createdAt": "2024-01-12T21:00:00.000Z"
+      "createdAt": "2025-01-03"
     },
     {
       "name": "Lampada Tiffany",
@@ -131,7 +131,7 @@
       "description": "Stile classico e colori vivaci.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_53870884373_49d170b131_z_400_300_nofilter.jpg",
       "id": "y1z2a3b4c",
-      "createdAt": "2024-01-13T22:00:00.000Z"
+      "createdAt": "2025-05-24"
     },
     {
       "name": "Orologio da Taschino",
@@ -140,7 +140,7 @@
       "description": "Perfetto per collezionisti.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_53442406423_e8eba9b12d_400_300_nofilter.jpg",
       "id": "d5e6f7g8h",
-      "createdAt": "2024-01-14T23:00:00.000Z"
+      "createdAt": "2025-07-22"
     },
     {
       "name": "Giradischi Portatile",
@@ -149,7 +149,7 @@
       "description": "Per ascoltare i tuoi vinili ovunque.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_54562072631_96ebe17e40_400_300_nofilter.jpg",
       "id": "i9j0k1l2m",
-      "createdAt": "2024-01-15T09:00:00.000Z"
+      "createdAt": "2025-05-30"
     },
     {
       "name": "Valigia in Pelle",
@@ -158,7 +158,7 @@
       "description": "Ideale come decorazione.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_54207310819_6f15a4ff41_z_400_300_nofilter.jpg",
       "id": "n3o4p5q6r",
-      "createdAt": "2024-01-16T10:00:00.000Z"
+      "createdAt": "2025-02-13"
     },
     {
       "name": "Bussola Antica",
@@ -167,7 +167,7 @@
       "description": "Ottone lucido, perfettamente conservata.",
       "imageUrl": "https://loremflickr.com/cache/resized/1525_24190568916_72c806fe66_400_300_nofilter.jpg",
       "id": "s7t8u9v0w",
-      "createdAt": "2024-01-17T11:00:00.000Z"
+      "createdAt": "2025-04-01"
     },
     {
       "name": "Macchina Fotografica Analogica",
@@ -176,7 +176,7 @@
       "description": "Scatta foto con stile.",
       "imageUrl": "https://loremflickr.com/cache/resized/3762_11226454804_ca67771592_400_300_nofilter.jpg",
       "id": "x1y2z3a4b",
-      "createdAt": "2024-01-18T12:00:00.000Z"
+      "createdAt": "2025-11-25"
     },
     {
       "name": "Ventilatore Retrò",
@@ -185,7 +185,7 @@
       "description": "Funzionante e decorativo.",
       "imageUrl": "https://loremflickr.com/cache/resized/5142_5688077556_0d1eecce9a_z_400_300_nofilter.jpg",
       "id": "c5d6e7f8g",
-      "createdAt": "2024-01-19T13:00:00.000Z"
+      "createdAt": "2025-05-15"
     },
     {
       "name": "Specchio Dorato",
@@ -194,7 +194,7 @@
       "description": "Cornice lavorata a mano.",
       "imageUrl": "https://loremflickr.com/cache/resized/7403_9580158025_8144b70882_z_400_300_nofilter.jpg",
       "id": "h9i0j1k2l",
-      "createdAt": "2024-01-20T14:00:00.000Z"
+      "createdAt": "2025-01-14"
     },
     {
       "name": "Mappamondo Antico",
@@ -203,7 +203,7 @@
       "description": "Cartografia storica.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_53562843575_8d21084047_z_400_300_nofilter.jpg",
       "id": "m3n4o5p6q",
-      "createdAt": "2024-01-21T15:00:00.000Z"
+      "createdAt": "2025-10-06"
     },
     {
       "name": "Televisore CRT",
@@ -212,7 +212,7 @@
       "description": "Pezzo di storia della TV.",
       "imageUrl": "https://loremflickr.com/cache/resized/5054_5443182430_5b3b286244_400_300_nofilter.jpg",
       "id": "r7s8t9u0v",
-      "createdAt": "2024-01-22T16:00:00.000Z"
+      "createdAt": "2026-01-19"
     },
     {
       "name": "Violino Antico",
@@ -221,7 +221,7 @@
       "description": "Strumento di pregio.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_54584329109_03d772134b_400_300_nofilter.jpg",
       "id": "w1x2y3z4a",
-      "createdAt": "2024-01-23T17:00:00.000Z"
+      "createdAt": "2025-05-16"
     },
     {
       "name": "Macchina da Cucire Singer",
@@ -230,7 +230,7 @@
       "description": "La classica macchina a pedale.",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_52728092194_1553c6c0b6_400_300_nofilter.jpg",
       "id": "b5c6d7e8f",
-      "createdAt": "2024-01-24T18:00:00.000Z"
+      "createdAt": "2025-12-02"
     },
     {
       "name": "Vinile Pink Floyd",
@@ -239,7 +239,7 @@
       "category": "Musica",
       "imageUrl": "https://loremflickr.com/cache/resized/65535_54102447663_2c2ffc65bc_z_400_300_nofilter.jpg",
       "id": "g9h0i1j2k",
-      "createdAt": "2026-01-25T19:00:00.000Z"
+      "createdAt": "2025-01-24"
     },
     {
       "name": "Armadio Vintage",
@@ -248,7 +248,7 @@
       "category": "Arredamento",
       "imageUrl": "",
       "id": "2cq0lbpiu",
-      "createdAt": "2026-01-20T17:10:29.154Z"
+      "createdAt": "2025-09-02"
     }
   ]
 }
