@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import apiClient from '../../api/apiClient';
+import { selectProductById } from '../../features/products/productsSlice';
 import NotFound from '../NotFound/NotFound';
 import './ProductDetail.css';
 
@@ -9,25 +11,34 @@ import './ProductDetail.css';
 function ProductDetail() {
   const { id } = useParams();
 
+  const existingProduct = useSelector((state) => selectProductById(state, id));
+
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  //Recupero dati del prodotto tramite ID
+  
   useEffect(() => {
+    // Se il prodotto è già presente nello stato globale, usalo direttamente
+    if (existingProduct) {
+        setProduct(existingProduct);
+        return;
+    }
+
+    // Se il prodotto non è già presente nello stato, effettua la chiamata API
     const fetchProduct = async () => {
       try {
         const response = await apiClient.get(`/products/${id}`);
         setProduct(response.data);
-      } catch (err) {
-        setError('Prodotto non trovato');
+      } catch  (err) {
+        setError(err.response?.data || 'Prodotto non trovato');
       } finally {
         setLoading(false);
       }
     };
 
     fetchProduct();
-  }, [id]);
+  }, [id, existingProduct]);
 
   if (loading) return <p className="loading-text">Caricamento dettagli...</p>;
 

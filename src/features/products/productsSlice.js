@@ -104,7 +104,12 @@ const productsSlice = createSlice({
     },
 });
 
+//Esportazione azioni per la gestione della paginazione, ricerca e filtro.
 export const { setPage, setSearchTerm, setCategory } = productsSlice.actions;
+
+//Selettore per recuperare un prodotto specifico tramite ID.
+export const selectProductById = (state, productId) => 
+    state.products.items.find(item => item.id.toString() === productId);
 
 //Selettore memorizzato per filtrare e impaginare i prodotti.
 export const selectPaginatedProducts = createSelector(
